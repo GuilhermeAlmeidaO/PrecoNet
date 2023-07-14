@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preços Net</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="assets/logotipo/Logo_Sem_Nome_para_Branco.png">
+</head>
+<body>
+
+    <header>
+        <nav id="navBar">
+            <img src="assets/logotipo/Logo_Sem_Nome_para_Branco.png" alt="LogoTipo Sem Nome">
+
+            <div id="conteudoHeader">
+                <button id="newItem" onclick="importExport()">Exportar/Importar</button>
+                <a href="developer.html"><button id="newItem">Area de Desenvolvimento</button></a>
+            </div> <!--conteudoHeader-->
+
+        </nav>
+    </header>
+
+    <div class="centr">
+        <div id="importExport_LS" style="display: none;">
+            <div class="close-button" onclick="closeImportExport()">X</div>
+            <h2 style="text-align: center;">Importar ou Exportar</h2>
+            <p style="text-align: justify; margin: 5px;">Está parte do site é dedicada para quando você for atualizar este site, você não perder os dados/clientes que você tem na tabela do site.</p>
+
+            <div id="buttonsImportExport">
+                <button onclick="importPart()" id="bntImport">Importar</button>
+                <button onclick="exportPart()" id="bntExport">Exportar</button>
+            </div> <!--buttonsImportExport-->
+
+            <div id="importar" style="display: none;">
+                <div id="importarConteudo">
+                <h3>Cole o código que você copiou aqui embaixo.</h3>
+                <input type="text" id="inptImportar">
+                <button id="newItem" class="subsImport">Substituir</button>
+                </div>
+
+                <!-- <div id="divQuestYorN" style="display: none;">
+                    <h2 style="color: red; text-decoration: underline;">ATENÇÃO</h2>
+                    <p>Se você fizer isso você substituirá os dados que você tem agora para oque você colocou algo ou não no campo anterior.</p>
+                    <h3>Você tem certeza que quer fazer esta ação?</h3>
+                    <button id="questY" onclick="bntQuestY()">Sim, Tenho</button>
+                    <button id="questN" onclick="bntQuestN()">Melhor não</button>
+                    <output style="display: none;" id="outputQuest"></output>
+                </div> -->
+            </div> <!--importar-->
+
+            <div id="exportar" style="display: none;">
+                <h3>Clique no código para exportar os dados</h3>
+                <button id="copyLS">Clique para copiar o código</button>
+                <output id="statusOutput"></output>
+            </div> <!--exportar-->
+        </div> <!--importExport_LS-->
+    </div> <!--centr-->
+
+
+    <div class="conteiner">
+
+        <h1>Levantamento</h1>
+        <div class="centr">
+            <input type="text" id="nameLanva" onkeydown="handleKeyPress(event)">
+            <button id="newItem" onclick="levantamentoNew()">Criar levantamento</button>
+        </div>
+        <div class="centr">
+            <div class="tabela" id="tabela">
+                
+            </div> <!--tabela-->
+        </div> <!--centr-->
+
+        <div id="campuErro">
+            <div class="bntClearConso">
+                <button id="limparConso" onclick="limparConso()">Limpar Console</button> <div id="notificationErro">!</div>
+            </div> <!--bntClearConso-->
+            <span id="erro_nomeUndefined" style="color: red; display: none;">Erro: O nome não foi digitado.</span>
+        </div> <!--campuErro-->
+
+    <div class="baseEditElement" id="baseEditElement"></div> <!--baseEditElement-->
+        <div class="editarElement" id="editarElementFun" style="display: none;">
+            <h2 style="text-align: center;">Editar</h2>
+
+            <div class="vendendorDiv">
+                <span style="font-size: 25px;">
+                    Vendendor:
+                </span> &nbsp;
+                <input type="text" id="nomeVendendor" placeholder="Vendendor"><br>
+            </div> <!--vendendorDiv-->
+
+            <div class="nomeCliente">
+                <span style="font-size: 25px;">
+                    Nome:
+                </span>
+                <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+            </div>
+
+            <div class="horaCompradaDiv">
+                <span style="font-size: 25px;">
+                    Hora comprada:
+                </span> &nbsp;
+                <input type="time" id="horaComprada"> 
+                <input type="date" id="dataComprada" max="2023-12-31" min="2023-01-01">
+                <button id="calcEditElement" onclick="calcEditElementDate(event)">
+                    Calcular
+                </button>
+            </div><!--horaCompradaDiv-->
+
+            <div class="vencimentoDiv">
+                <span style="font-size: 25px; display: inline-block;">
+                    Vencimento:
+                </span> &nbsp;
+                <div id="inputVencimentoValue" style="display: inline-block;"></div>
+            </div>
+
+            <div class="PagamentoSitua" id="PagamentoSitua">
+                <span style="font-size: 25px;">
+                    Pagamento:
+                </span>
+                <input type="radio" id="pagamentoSituaYes" name="pagamentoSitua" value="yes">
+                <label for="pagamentoSituaYes">Sim</label>
+
+                <input type="radio" id="pagamentoSituaNo" name="pagamentoSitua" value="no">
+                <label for="pagamentoSituaNo">Não</label>
+            </div> <!--PagamentoSitua-->
+            
+            <div class="planoCompradaDiv" id="planoCompradaDivId">
+                <span style="font-size: 25px; display: inline-block; margin-right: 10px;" id="plano_P">
+                    Plano:
+                </span> &nbsp;
+                <span id="areaPlanos">
+                    <select id="select_EditElement">
+                        <option value="0"></option>
+                        <option value="00:05">00:05</option>
+                        <option value="00:10">00:10</option>
+                        <option value="00:30">00:30</option>
+                        <option value="00:45">00:45</option>
+                        <option value="01:30">01:30</option>
+                    </select>
+                </span> <!--areaPlanos-->
+             </div> <!--planoCompradaDiv-->
+
+            <div class="pausaTimePlano">
+                <span style="font-size: 25px;">
+                    Pausa:
+                </span>
+                <button id="calcEditElement" onclick="playPause()">Pausar</button>
+                <button id="calcEditElement" onclick="starTimeStand()">Continuar</button>
+                <span style="margin-left: 2px; padding: 4.5px; border: 1px solid black; border-radius: 5px; background-color: #b0b0b0;">
+                    Estado: 
+                    <span id="statePlayPause" style="text-decoration: underline; display: none;">Pausado</span>
+                    <span id="stateStartPlay" style="text-decoration: underline; display: none;">Normal</span>
+                </span>
+            </div> <!--pausaTimePlano-->
+
+            <div class="idElement">
+                <span style="font-size: 25px;">
+                    Id:
+                </span>
+                <span id="idValorElement" onclick="copyDivContent()"></span>
+            </div><!--idElement-->
+
+
+            <footer id="FooterEditarElement">
+                <button id="SalvarExitEdit" onclick="SalvarExitEdit()">Salvar e sair</button>
+                <button id="SalvarEdit" onclick="SalvarEdit()">Salvar</button>
+                <button id="ExitEdit" onclick="ExitEdit()">Sair</button>
+            </footer>
+        </div> <!--editarElement-->
+    </div> <!--conteiner-->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/limparConso.js"></script>
+    <script src="scripts/editarElement.js"></script>
+    <script src="scripts/BD.js"></script>
+    <script src="scripts/import-export.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script>
+        
+        // Dar display para pausar
+function playPause() {
+  let div = document.getElementById("statePlayPause");
+  div.style.display = "contents";
+  statePlayPauseLig = true;
+  statesPlayNoPlay = "playStop";
+
+  if (stateStartPlayLig) {
+    let div = document.getElementById("stateStartPlay");
+    div.style.display = "none";
+  }
+  
+    var selectElement = document.getElementById('select_EditElement');
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    var selectedText = selectedOption.text;
+
+    // Obter o horário atual
+    var horarioAtual = moment();
+
+    // Adicionar o tempo selecionado ao horário atual
+    var horarioSomado = horarioAtual.add(moment.duration(selectedText));
+
+    // Obter o conteúdo atual da div inputVencimentoValue
+    var vencimentoDiv = document.getElementById("inputVencimentoValue").textContent;
+
+    // Calcular a diferença em relação ao conteúdo atual
+    var diferenca = horarioSomado.diff(moment(vencimentoDiv, 'HH:mm'), 'minutes');
+
+    // Atualizar a div inputVencimentoValue com a nova diferença
+    document.getElementById("inputVencimentoValue").textContent = moment(vencimentoDiv, 'HH:mm').add(diferenca, 'minutes').format('HH:mm');
+}
+
+    </script>
+    <!--Estilos e etc.-->
+    <script>
+
+        //Estilo pelo o JavaScript
+
+        var divTabelaGetElement = document.getElementById('tabela');
+        divTabelaGetElement.style.height = '380px';
+        divTabelaGetElement.style.overflowY = 'scroll';
+
+        if (divTabelaGetElement.offsetHeight > window.innerHeight) {
+        divTabelaGetElement.style.width = 'calc(110% + 0px)';
+        }
+
+        //Input função enter newTabela
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) {
+                levantamentoNew();
+            }
+        }
+
+        //Função copiar o IdElement do Span
+
+        function copyDivContent() {
+            // Seleciona o elemento da div
+            var divElement = document.getElementById('idValorElement');
+
+            // Cria um range de seleção
+            var range = document.createRange();
+            range.selectNode(divElement);
+
+            // Seleciona o conteúdo da div
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            // Copia o conteúdo para a área de transferência
+            document.execCommand('copy');
+
+            // Limpa a seleção
+            window.getSelection().removeAllRanges();
+        }
+
+        //Não editar meu input
+
+        document.getElementById("nomeCliente").readOnly = true
+
+    </script>
+</body>
+</html>

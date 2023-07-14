@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer</title>
+    <link rel="stylesheet" href="style/developer.css">
+</head>
+<body>
+    <header id="main_TopPage">
+        <nav id="navBar">
+            <img src="assets/logotipo/Logo_Sem_Nome_para_Branco.png" alt="LogoTipo Sem Nome">
+
+            <div id="conteudoHeader">
+                <div id="buttons_ConteudoHeader">
+                    <button onclick="importExportDev()">Exportar/Importar</button>
+                    <button id="backMainPage">Voltar para a página principal</button>
+                </div> <!--buttons_ConteudoHeader-->
+            </div> <!--conteudoHeader-->
+
+            <div id="elementesBothClear">
+                <div id="divCheckbox">
+                    <label for="toggle-switch">Login sem senha:</label>
+                    <input id="toggle-switch" type="checkbox">
+                </div> <!--divCheckbox-->
+            </div> <!--elementesBothClear-->
+
+        </nav>
+    </header>
+
+    <div class="conteiner">
+        <button id="clearLocalStorage">Limpar localStorage</button> <br> <br>
+        <button id="refreshPage">Recarregar a página</button>
+        <h1 style="border-bottom: 1px solid black;">Área de desenvolvimento</h1>
+
+        <div id="preview_Tabela" style="border-bottom: 2px solid black; padding: 3px;">
+            <h3>Tabela</h3>
+            <div id="preview_conteudo"></div>
+        </div> <!--preview_Tabela-->
+
+        <div id="localStorageView" style="border-bottom: 2px solid black; padding: 3px;">
+            <h3>localStorage</h3>
+            <div id="previewLocalStorage"></div>
+            <div id="inputsViewLocalStorage">
+                <button id="editLocalStorage" class="styleBntEditLS">Editar</button>
+
+                <div id="preSetEditLS" style="display: none;">
+                    <p id="chaveLineLS-Style_presetEditLS" style="display: inline-block;">Chave da linha</p>
+                    <input type="number" min="0" value="0" placeholder="N°" id="inputNumberLS_PresetEditLS" style="display: inline-block;">
+                    <button id="editLS_presetEditLS" style="display: inline-block;">Editar</button>
+
+                    <div id="dadosLS_presetEditLS">
+                        <header id="header_presetEditLS">
+                            <p id="SelecP-Style_presetEditLS" style="display: inline-block;">Selecionado:</p>
+                            <output id="outputGetIdLS_presetEditLS" style="display: inline-block;"></output>
+                        </header> <!--header_presetEditLS-->
+                        
+                        <button id="getItemLS_presetEditLS">
+                            <span>
+                                GetItem
+                            </span>
+                        </button>
+
+                        <button id="removeItemLS_presetEditLS">
+                            <span>
+                                RemoveItem
+                            </span>
+                        </button>
+
+                        <button id="SetItemLS_presetEditLS">
+                            <span>
+                                SetItem
+                            </span>
+                        </button>
+
+                        <div id="getItemDiv" style="display: none;">
+                            <h2 style="text-align: center;">GetItem</h2>
+                            <p style="font-size: 15px; text-align: center; margin-top: -14px;">
+                                Aqui você pode ver oque tem no LocalStorage e redefinir o mesmo.
+                            </p>
+                            <div id="content_getItemDiv" contenteditable="true"></div>
+                            <button id="Save_getItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Salvar
+                            </button>
+
+                            <button id="Close_getItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Fechar
+                            </button>
+                        </div> <!--getItemDiv-->
+
+                        <div id="removeItemDiv" style="display: none;">
+                            <h2 style="text-align: center;">RemoveItem</h2>
+                            <p style="font-size: 15px; text-align: center; margin-top: -14px;">
+                                Aqui você pode remover o LocalStorage que você selecionou.
+                            </p>
+                            <div id="content_removeItemDiv" style="display: flex; background-color: #fff; padding: 0,5px;">
+                                <div style="width: 199.5px; border-right: 1px solid rgb(140, 140, 140);">
+                                    <header style="border-bottom: 1px solid rgb(140, 140, 140);">
+                                        Chave
+                                    </header>
+                                    <div>
+                                        <span id="fieldChave_removeItemDiv"></span>
+                                    </div>
+                                </div>
+
+                                <div style="width: 199.5px;">
+                                    <header style="border-bottom: 1px solid rgb(140, 140, 140);">
+                                        &nbsp;Valor
+                                    </header>
+                                    <div>
+                                        &nbsp;<span id="fieldValor_removeItemDiv"></span>
+                                    </div>
+                                </div>
+                            </div> <!--content_removeItemDiv-->
+
+
+                            <button id="removeItem_removeItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Remover
+                            </button>
+
+                            <button id="Cancel_removeItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Cancelar
+                            </button>
+                        </div> <!--removeItemDiv-->
+
+                        <div id="setItemDiv" style="display: none;">
+                            <h2 style="text-align: center;">SetItem</h2>
+                            <p style="font-size: 15px; text-align: center; margin-top: -14px;">
+                                Aqui você pode criar um novo localStorage.
+                            </p>
+
+                            <div id="content_setItemDiv" style="display: flex; background-color: #fff; border: 1px solid #000; margin: 5px; padding: 3px;">
+                                <div style="width: 199.5px; border-right: 1px solid rgb(140, 140, 140);">
+                                    <header style="border-bottom: 1px solid rgb(140, 140, 140);">
+                                        &nbsp;Chave
+                                    </header>
+                                    <div>
+                                        <input type="text" placeholder="Chave" id="fieldChave_setItemDiv" style="margin: 5px;">
+                                    </div>
+                                </div>
+
+                                <div style="width: 199.5px;">
+                                    <header style="border-bottom: 1px solid rgb(140, 140, 140);">
+                                        &nbsp;Valor
+                                    </header>
+                                    <div>
+                                        &nbsp;<input type="text" placeholder="Valor" id="fieldValor_setItemDiv" style="margin: 5px;">
+                                    </div>
+                                </div>
+                                
+                            </div> <!--content_removeItemDiv-->
+
+                            <button id="setItem_setItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Setar
+                            </button>
+
+                            <button id="Cancel_setItemDiv" class="buttonClassStyle" style="margin-bottom: 5px; margin-left: 2px;">
+                                Cancelar
+                            </button>
+
+                        </div> <!--setItemDiv-->
+
+                    </div> <!--dadosLS_presetEditLS--> <br>
+
+                    <output id="consoleErrorsPreSet" style="display: none;"></output> <br><br>
+                    <button id="advencedPreset">Avançado</button>
+                    <button id="closePreset">Fechar</button>
+                </div> <!--preSetEditLS-->
+
+                <div id="baseEditLS" style="display: none;">
+                    <div id="divEditLocalStorage" style="display: none;" contenteditable="true"></div>
+                    <button class="styleBntEditLS" id="saveEditLS">Salvar</button>
+                    <button class="styleBntEditLS" id="closeEditLS">Fechar</button>
+                </div> <!--baseEditLS-->
+        </div> <!--localStorageView-->
+    </div> <!--conteiner-->
+
+    
+    <div id="consoleView">
+        <h3>Console</h3>
+
+        <div id="contentConsole">
+            <div id="content_contentConsole"></div>
+    </div> <!--consoleView-->
+
+
+    <!--Scripts da página-->
+    <script src="scripts/Developer.js"></script>
+    <script>
+        //Refresh Page
+
+        document.getElementById("refreshPage").addEventListener("click", function(){
+            window.location.reload();
+            alert("Recaregado.")
+        })
+
+        //Limpar LocalStorage
+
+        document.getElementById("clearLocalStorage").addEventListener("click", function(){
+            localStorage.clear();
+            window.location.reload();
+            alert("LocalStorage limpo.")
+        })
+
+
+        //Validar Credenciais
+
+        if (localStorage.getItem("LoginNoPass") == "false" || localStorage.getItem("LoginNoPass") == null){
+            var requestLP = window.confirm("Você entrou na área de desenvolvimento da página. \nSe você não sabe oque está fazendo, ou não tem o login e senha, saia daqui, clicando em cancelar.");
+
+            if (!requestLP) {
+                window.location.href = 'index.html';
+            } else{
+                var requestLogin = window.prompt("Informe o login: ")
+                var requestPass = window.prompt("Informe a senha: ")
+
+                    if (requestLogin == "" && requestPass == ""){
+                        alert("Credenciais aceitas.")
+                    } else{
+                        var requestFail = window.confirm("A senha ou o login estão errado. \nVocê está sendo redirecionado(a) para a página principal do site.")
+                        if (!requestFail || requestFail) {
+                            window.location.href = 'index.html';
+                        }
+                    }
+            }
+        }
+
+
+        //Voltar p/ página principal
+
+        var backMainPageElement = document.getElementById("backMainPage")
+        backMainPageElement.addEventListener("click", function() {
+            window.location.href = 'index.html';
+        });
+
+        //Selecionar input checkbox em qual quer lugar da div
+
+        var divCheckbox = document.getElementById("divCheckbox");
+        var toggleSwitch = document.getElementById("toggle-switch");
+
+        //Select or not select input checkbox
+
+        var checkbox = document.getElementById('toggle-switch');
+
+        checkbox.addEventListener('change', function() {
+
+        window.location.reload();
+        if (checkbox.checked) {
+            
+            var LocalStorageVar = localStorage.getItem("LoginNoPass")
+            if (LocalStorageVar == null){
+                localStorage.setItem("LoginNoPass", true)
+            }else{
+                localStorage.removeItem("LoginNoPass")
+                localStorage.setItem("LoginNoPass", true)
+            }
+
+            //console.log('O checkbox está selecionado');
+            
+        } else {
+
+            var LocalStorageVar = localStorage.getItem("LoginNoPass")
+            if (LocalStorageVar == null){
+                localStorage.setItem("LoginNoPass", false)
+            }else{
+                localStorage.removeItem("LoginNoPass")
+                localStorage.setItem("LoginNoPass", false)
+            }
+
+            //console.log('O checkbox não está selecionado');
+        }
+        });
+
+        if (localStorage.getItem("LoginNoPass") == "true"){
+            checkbox.checked = true;
+        }
+
+
+    </script>
+</body>
+</html>

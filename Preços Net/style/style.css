@@ -1,0 +1,469 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+button, input, output{
+    cursor: pointer;
+}
+
+.conteiner{
+    margin-top: 100px;
+}
+
+.centr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabela{
+    border: 1px solid black;
+    width: 717px;
+    height: 380px;
+    overflow: auto;
+}
+
+#newItem{
+    border-radius: 5px;
+    border: none;
+    background-color: #ddd;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#newItem:hover{
+    background-color: #b0b0b0;
+    border: 1px solid black;
+    
+}
+
+#nameLanva{
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    /* margin-left: 37%; */
+    margin-bottom: 5px;
+}
+
+#campuErro{
+    margin: 5px;
+    border: 1px solid black;
+    width: 300px;
+    height: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#notificationErro{
+    float: right;
+    margin-top: 8px;
+    margin-right: 15px;
+    background-color: red;
+    color: #cfcfcf;
+    padding: 5px;
+    border-radius: 15px;
+    width: 15px;
+    height: 15px;
+    display: none;
+}
+
+/*Responsividade*/
+
+    /*Button e Input*/
+
+@media (min-width: 516px) {
+    #newItem{
+        margin-top: 5px;
+        width: 155px;
+    }
+    #nameLanva{
+        margin-bottom: 0px;
+    }
+  }
+
+    /**/
+
+@media (min-width: 412px) {
+    #ExluirBntTableCntdTable{
+        margin-left: -15px;
+    }
+}
+
+
+/* Estilo button clear console */
+
+#limparConso{
+    border-radius: 5px;
+    border: none;
+    background-color: #ddd;
+    width: 110px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bntClearConso{
+    border-bottom: 1px solid black;
+}
+
+#limparConso:hover{
+    background-color: #b0b0b0;
+    border: 1px solid black;
+}
+
+/* Estilo da tabela */
+
+
+.none{
+    border: 1px solid black;
+    width: 100px;
+    font-size: 12px;
+}
+
+#stats{
+    border: 1px solid black;
+    width: 100px;
+}
+
+
+#plano{
+    border: 1px solid black;
+    width: 90px;
+}
+
+#start{
+    border: 1px solid black;
+    width: 100px;
+}
+
+#vencimento{
+    border: 1px solid black;
+    width: 100px;
+}
+
+#buttonTabela{
+    border: 1px solid black;
+}
+
+#buttonTabela > button{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: 80px;
+}
+
+#buttonTabela > button:hover{
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+table{
+    border-spacing: 0px;
+    margin-top: 2px;
+    margin-left: 1px;
+}
+
+td{
+    text-align: center;
+}
+
+#pay_NoPay{
+    font-size: 15px;
+}
+
+
+
+/* Editar Elemento da Tabela*/
+
+.baseEditElement{
+    position: absolute;
+    top: 0px;
+    height: 106%;
+    width: 100%;
+    background-color: #3b3b3b;
+    opacity: 0.5;
+    display: none;
+    margin: 0px;
+    margin-left: -8px;
+}
+
+.editarElement{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    overflow: auto;
+    padding: 15px;
+}
+
+
+.editarElement > h2{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* .editarElement > div{
+    border: 1px solid red;
+} */
+
+#nomeVendendor, #horaComprada, #nomeCliente{
+    height: 25px;
+}
+
+.horaCompradaDiv, .vendendorDiv, .planoCompradaDiv, .PagamentoSitua, .pausaTimePlano, .nomeCliente, .vencimentoDiv{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.planoCompradaDiv{
+    width: 250px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: -12px;
+}
+
+.idElement{
+    clear: both;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+span#idValorElement{
+    border: 1px solid black;
+    padding: 5px;
+    min-width: 10px;
+    height: 26px;
+}
+
+span#idValorElement:hover{
+    background-color: #b0b0b0;
+}
+
+select{
+    border: 1px solid black;
+    width: 100px;
+    margin-left: 75px;
+    text-align: center;
+    position: relative;
+    top: -23px;
+    float: left;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+#FooterEditarElement{
+    clear: both;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+#FooterEditarElement > button{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: 90px;
+    height: 30px;
+}
+
+#FooterEditarElement > button:hover{
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#dataComprada{
+    height: 25px;
+}
+
+#calcEditElement{
+    margin-left: 2px;
+    height: 29px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+}
+
+#calcEditElement:hover{
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.PagamentoSituaInpts{
+    margin-bottom: 10px;
+}
+
+#inputVencimentoValue{
+    border: 1px solid #4F4F4F;
+    border-radius: 3px;
+    padding: 5px;
+    width: 70px;
+    text-align: center;
+    height: 15px;
+}
+
+#outputPlano{
+    border: 1px solid #4F4F4F;
+    border-radius: 5px;
+    padding: 5px;
+    width: 75px;
+    text-align: center;
+}
+
+/*Nav bar*/
+
+header{
+    background-color: #d4d4d4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+nav#navBar > img{
+    width: 50px;
+    height: 50px;
+    margin-top: 7.25px;
+    margin-left: 5px;
+    position: absolute;
+}
+
+#conteudoHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#conteudoHeader > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #efeeee;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#conteudoHeader > a > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #efeeee;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#importExport_LS{
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 350px;
+    width: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+#buttonsImportExport > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #c2c2c2;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#buttonsImportExport{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#exportar, #importar{
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+#importar > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #c2c2c2;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#exportar > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #c2c2c2;
+    width: 175px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 5px;    
+}
+
+#exportar > button:hover{
+    border: 1px solid black;
+    width: 180px;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+    padding: 1px;
+}
+
+/* #divQuestYorN{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    text-align: center;
+    width: 375px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#divQuestYorN > button{
+    border-radius: 5px;
+    border: none;
+    background-color: #c2c2c2;
+    width: 175px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#divQuestYorN > button:hover{
+    border: 1px solid black;
+} */

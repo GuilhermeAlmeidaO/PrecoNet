@@ -1,0 +1,395 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteiner{
+    margin-top: 130px;
+}
+
+#preview_Tabela > div{
+    border: 1px solid black;
+    width: 510px;
+}
+
+#preview_conteudo{
+    padding: 1px;
+}
+
+/* Estilo da tabela */
+
+
+.none{
+    border: 1px solid black;
+    width: 100px;
+    font-size: 12px;
+}
+
+#stats{
+    border: 1px solid black;
+    width: 100px;
+}
+
+
+#plano{
+    border: 1px solid black;
+    width: 90px;
+}
+
+#start{
+    border: 1px solid black;
+    width: 100px;
+}
+
+#vencimento{
+    border: 1px solid black;
+    width: 100px;
+}
+
+#buttonTabela{
+    border: 1px solid black;
+}
+
+#buttonTabela > button{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: 80px;
+}
+
+#buttonTabela > button:hover{
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+table{
+    border-spacing: 0px;
+    margin-top: 2px;
+    margin-left: 1px;
+}
+
+td{
+    text-align: center;
+}
+
+#pay_NoPay{
+    font-size: 15px;
+}
+
+/*Nav bar*/
+
+header#main_TopPage{
+    background-color: #d4d4d4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+nav#navBar > img{
+    width: 50px;
+    height: 50px;
+    margin-top: 7.25px;
+    margin-left: 5px;
+    position: absolute;
+}
+
+#conteudoHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons_ConteudoHeader > button{
+    border-radius: 5px;
+    border: none;
+    width: 195px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+#buttons_ConteudoHeader > button:hover{
+    border: 1px solid black;
+    width: auto + 10px;
+}
+
+#buttons_ConteudoHeader{
+    border-radius: 5px;
+    border: none;
+    width: auto;
+}
+
+/*Elements Both Clear*/
+
+#elementesBothClear{
+    float: right;
+    display: flex;
+}
+
+#elementesBothClear > #divCheckbox{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #F0F0F0;
+    width: auto;
+    height: auto;
+    padding: 7px;
+    margin-bottom: 2px;
+}
+
+/*LocalStorage view*/
+
+#previewLocalStorage{
+    border: 1px solid black;
+    width: auto;
+}
+
+#localStorageView > p{
+    font-size: 15pt;
+}
+
+.styleBntEditLS{
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: 80px;
+    font-size: 13pt;
+}
+
+/*Pop Up edit LS detalhados*/
+
+#baseEditLS{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+#divEditLocalStorage{
+    border: 1px solid black;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+/*PreSet Edit LS*/
+
+#preSetEditLS{
+    border: 1px solid #000;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#chaveLineLS-Style_presetEditLS{
+    display: flex;
+    width: 109px;
+    height: 19px;
+    flex-direction: column;
+
+    color: #000;
+    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#inputNumberLS_PresetEditLS{
+    width: 42px;
+    height: 29px;
+
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-weight: 600;
+}
+
+#editLS_presetEditLS{
+    width: 75px;
+    height: 33px;
+
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #D9D9D9;
+}
+
+#dadosLS_presetEditLS{
+    width: 412px;
+    min-height: 159px;
+
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #DDDCDC;
+}
+
+#header_presetEditLS{
+    width: 410px;
+    height: 31px;
+
+    border-bottom: 1px solid #000;
+    background: #D9D9D9;
+}
+
+#SelecP-Style_presetEditLS{
+    display: flex;
+    width: 31px;
+    height: 15px;
+    flex-direction: column;
+
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 5px;
+}
+
+#outputGetIdLS_presetEditLS{
+    width: 250px;
+    height: 20px;
+
+    border: 1px solid #000;
+    background: #FFF;
+    text-align: center;
+    float: right;
+    margin-right: 35px;
+    margin-top: 5px;
+}
+
+#getItemLS_presetEditLS{
+    width: 100px;
+    height: 27px;
+
+    border-radius: 0px 10px 10px 10px;
+    border: 1px solid #000;
+    background: #B0AEAE;
+}
+
+#removeItemLS_presetEditLS{
+    width: 109px;
+    height: 27px;
+
+    border-radius: 0px 10px 10px 10px;
+    border: 1px solid #000;
+    background: #B0AEAE;
+}
+
+#SetItemLS_presetEditLS{
+    width: 100px;
+    height: 27px;
+
+    border-radius: 0px 10px 10px 10px;
+    border: 1px solid #000;
+    background: #B0AEAE;
+}
+
+#dadosLS_presetEditLS > button{
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+#getItemLS_presetEditLS:hover, #removeItemLS_presetEditLS:hover, #SetItemLS_presetEditLS:hover, #editLS_presetEditLS:hover{
+    background: #c2c2c2;
+}
+
+#getItemLS_presetEditLS > span, #removeItemLS_presetEditLS > span, #SetItemLS_presetEditLS > span{
+    font-size: 17px;
+}
+
+#consoleErrorsPreSet{
+    border: 1px solid black;
+    width: auto;
+    padding: 3px;
+    margin-bottom: 2px;
+}
+
+#advencedPreset{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: auto;
+    font-size: 13pt;
+    /* float: right;
+    position: relative;
+    top: -25px; */
+}
+
+#closePreset{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: auto;
+    font-size: 13pt;
+    /* float: right;
+    position: relative;
+    top: -25px; */
+}
+
+/*GetItem parte*/
+
+#getItemDiv{
+    border-top: 1px solid #000;
+    margin-top: 20px;
+}
+
+#content_getItemDiv{
+    border: 1px solid #000;
+    width: 399px;
+    height: auto;
+    padding: 3px;
+    overflow-wrap: break-word;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.buttonClassStyle{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    width: auto;
+    font-size: 13pt;
+}
+
+/*removeItem parte*/
+
+#removeItemDiv{
+    border-top: 1px solid #000;
+    margin-top: 20px;
+}
+
+#content_removeItemDiv{
+    border: 1px solid #000;
+    width: 399px;
+    height: auto;
+    padding: 3px;
+    overflow-wrap: break-word;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+/*SetItem parte*/
+
+#setItemDiv{
+    border-top: 1px solid #000;
+    margin-top: 20px;
+}
+
+/*Console View*/
+
+#consoleView{
+    border-bottom: 2px solid black;
+}
+
+#contentConsole{
+    border: 1px solid black;
+}
+
+#content_contentConsole{
+    min-height: 250px;
+    max-width: 250px;
+    overflow: hidden;
+    padding: 5px;
+}
